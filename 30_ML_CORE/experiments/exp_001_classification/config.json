@@ -1,0 +1,16 @@
+{
+  "experiment_name": "classification_iris",
+  "model_type": "RandomForestClassifier",
+  "parameters": {
+    "n_estimators": 100,
+    "max_depth": 10,
+    "random_state": 42
+  },
+  "features": [
+    "sepal length (cm)",
+    "sepal width (cm)",
+    "petal length (cm)",
+    "petal width (cm)"
+  ],
+  "target": "target"
+}

@@ -1,0 +1,11 @@
+{
+  "experiment_name": "timeseries_stock_prediction",
+  "model_type": "ARIMA",
+  "parameters": {
+    "p": 5,
+    "d": 1,
+    "q": 0
+  },
+  "feature": "stock_price",
+  "target": "stock_price_forecast"
+}

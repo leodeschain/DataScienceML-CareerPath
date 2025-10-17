@@ -1,0 +1,16 @@
+{
+  "models": [
+    {
+      "model_id": "rf_iris_20251016_v1",
+      "experiment_name": "classification_iris",
+      "timestamp": "2025-10-16T10:00:00Z",
+      "path": "models/rf_iris_20251016_v1.joblib",
+      "metrics": {
+        "accuracy": 0.96,
+        "precision": 0.95,
+        "recall": 0.96
+      },
+      "git_hash": "abc1234"
+    }
+  ]
+}

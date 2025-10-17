@@ -1,0 +1,10 @@
+pandas
+numpy
+scikit-learn
+jupyter
+fastapi
+uvicorn
+streamlit
+pytest
+black
+flake8

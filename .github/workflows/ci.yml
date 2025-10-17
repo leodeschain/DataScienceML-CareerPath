@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.11'
+
+    - name: Make setup.sh executable
+      run: chmod +x 01_INFRA_E_AMBIENTE/setup.sh
+
+    - name: Run setup script
+      run: ./01_INFRA_E_AMBIENTE/setup.sh
+      working-directory: ./
+
+    - name: Upload debug log
+      uses: actions/upload-artifact@v3
+      with:
+        name: debug-log
+        path: debug.txt
+
+    - name: Generate coverage report
+      run: |
+        source .venv/bin/activate
+        pytest --cov=. --cov-report=xml
+      
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: coverage.xml
