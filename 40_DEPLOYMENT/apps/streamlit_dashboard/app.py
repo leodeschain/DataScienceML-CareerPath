@@ -12,7 +12,7 @@ st.title("Classificador de Flor de Íris")
 @st.cache_resource
 def load_model():
     try:
-        return joblib.load("../../models/classification_iris.joblib")
+        return joblib.load("30_ML_CORE/models/classification_iris.joblib")
     except FileNotFoundError:
         return None
 

@@ -7,7 +7,7 @@ import joblib
 import json
 
 # Carregar configuração do experimento
-with open('../experiments/exp_001_classification/config.json') as f:
+with open('30_ML_CORE/experiments/exp_001_classification/config.json') as f:
     config = json.load(f)
 
 # Carregar dados
@@ -29,7 +29,7 @@ model = RandomForestClassifier(
 model.fit(X_train, y_train)
 
 # Salvar modelo
-model_filename = f"../models/{config['experiment_name']}.joblib"
+model_filename = f"30_ML_CORE/models/{config['experiment_name']}.joblib"
 joblib.dump(model, model_filename)
 
 print(f"Modelo treinado e salvo em: {model_filename}")
