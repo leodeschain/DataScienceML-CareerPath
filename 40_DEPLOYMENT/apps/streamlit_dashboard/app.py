@@ -2,24 +2,30 @@ import streamlit as st
 import pandas as pd
 import joblib
 import numpy as np
+from pathlib import Path
 
 st.set_page_config(page_title="Classificador de Íris", layout="wide")
 
 # Título
 st.title("Classificador de Flor de Íris")
 
+# Define o diretório raiz do projeto dinamicamente
+# O script está em '40_DEPLOYMENT/apps/streamlit_dashboard/', então subimos 4 níveis para chegar na raiz
+PROJETO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+MODEL_PATH = PROJETO_ROOT / "30_ML_CORE" / "models" / "classification_iris.joblib"
+
 # Carregar o modelo
 @st.cache_resource
 def load_model():
     try:
-        return joblib.load("30_ML_CORE/models/classification_iris.joblib")
+        return joblib.load(MODEL_PATH)
     except FileNotFoundError:
         return None
 
 model = load_model()
 
 if model is None:
-    st.error("Modelo não encontrado. Por favor, treine o modelo primeiro (`30_ML_CORE/training/train.py`).")
+    st.error(f"Modelo não encontrado em: {MODEL_PATH}. Por favor, treine o modelo primeiro executando '30_ML_CORE/training/train.py'.")
 else:
     st.success("Modelo carregado com sucesso!")
 
@@ -31,13 +37,17 @@ else:
         sepal_width = st.sidebar.slider('Largura da Sépala (cm)', 2.0, 4.5, 3.4)
         petal_length = st.sidebar.slider('Comprimento da Pétala (cm)', 1.0, 7.0, 1.6)
         petal_width = st.sidebar.slider('Largura da Pétala (cm)', 0.1, 2.5, 0.4)
-        data = {
-            'Comprimento da Sépala': sepal_length,
-            'Largura da Sépala': sepal_width,
-            'Comprimento da Pétala': petal_length,
-            'Largura da Pétala': petal_width
+        
+        # As colunas do DataFrame de input devem corresponder exatamente às features do modelo
+        # O modelo foi treinado com: ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+        input_data = {
+            "sepal length (cm)": sepal_length,
+            "sepal width (cm)": sepal_width,
+            "petal length (cm)": petal_length,
+            "petal width (cm)": petal_width
         }
-        features = pd.DataFrame(data, index=[0])
+        
+        features = pd.DataFrame(input_data, index=[0])
         return features
 
     df_input = user_input_features()
@@ -48,8 +58,9 @@ else:
 
     # Fazer a predição
     if st.button("Classificar"):
-        prediction = model.predict(df_input.values)
-        prediction_proba = model.predict_proba(df_input.values)
+        # Passamos o DataFrame diretamente, pois as colunas já estão na ordem correta
+        prediction = model.predict(df_input)
+        prediction_proba = model.predict_proba(df_input)
         
         target_names = ['Setosa', 'Versicolor', 'Virginica']
         
@@ -59,3 +70,9 @@ else:
         st.subheader("Probabilidades:")
         df_proba = pd.DataFrame(prediction_proba, columns=target_names)
         st.write(df_proba)
+
+
+st.info("Este é um aplicativo de exemplo para demonstrar a classificação de flores de Íris com um modelo de Machine Learning treinado.")
+st.markdown("---")
+st.markdown("Desenvolvido como parte do portfólio de Data Science & ML.")
+
