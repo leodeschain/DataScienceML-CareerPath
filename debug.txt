@@ -1,19 +1,56 @@
-2025-10-22 15:10:26.631 [error] Error: spawn C:\projects\projetodev\datascienceml\data-ml-portfolio\.venv\Scripts\python.exe ENOENT
+2025-10-23 16:11:36.415 [info] Native locator: Refresh started
+2025-10-23 16:11:38.561 [info] Selected workspace /mnt/c/projects/projetodev/datascienceml/data-ml-portfolio for creating virtual environment.
+2025-10-23 16:11:38.581 [info] Native locator: Refresh started
+2025-10-23 16:11:39.805 [info] Selected interpreter /mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/.venv/bin/python for creating virtual environment.
+2025-10-23 16:11:40.546 [info] Native locator: Refresh finished in 4144 ms
+2025-10-23 16:11:42.372 [info] Running Env creation script:  [
+  '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/.venv/bin/python',
+  '/home/leopoldo/.vscode-server/extensions/ms-python.python-2025.16.0-linux-x64/python_files/create_venv.py',
+  '--git-ignore',
+  '--requirements',
+  '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/01_INFRA_E_AMBIENTE/requirements.txt',
+  '--requirements',
+  '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/40_DEPLOYMENT/api/fastapi_app/requirements.txt',
+  '--requirements',
+  '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/40_DEPLOYMENT/apps/streamlit_dashboard/requirements.txt'
+]
+2025-10-23 16:11:42.372 [info] > ./.venv/bin/python ~/.vscode-server/extensions/ms-python.python-2025.16.0-linux-x64/python_files/create_venv.py --git-ignore --requirements ./01_INFRA_E_AMBIENTE/requirements.txt --requirements ./40_DEPLOYMENT/api/fastapi_app/requirements.txt --requirements ./40_DEPLOYMENT/apps/streamlit_dashboard/requirements.txt
+2025-10-23 16:11:42.372 [info] cwd: .
+2025-10-23 16:11:42.374 [error] Error while running venv creation script:  Error: spawn /mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/.venv/bin/python ENOENT
     at Process.ChildProcess._handle.onexit (node:internal/child_process:285:19)
     at onErrorNT (node:internal/child_process:483:16)
-    at processTicksAndRejections (node:internal/process/task_queues:82:21) {
-  errno: -4058,
+    at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  errno: -2,
   code: 'ENOENT',
-  syscall: 'spawn C:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\.venv\\Scripts\\python.exe',
-  path: 'C:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\.venv\\Scripts\\python.exe',
+  syscall: 'spawn /mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/.venv/bin/python',
+  path: '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/.venv/bin/python',
   spawnargs: [
-    'c:\\Users\\Leopoldo\\.vscode\\extensions\\ms-python.python-2025.16.0-win32-x64\\python_files\\create_venv.py',
+    '/home/leopoldo/.vscode-server/extensions/ms-python.python-2025.16.0-linux-x64/python_files/create_venv.py',
     '--git-ignore',
     '--requirements',
-    'c:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\01_INFRA_E_AMBIENTE\\requirements.txt',
+    '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/01_INFRA_E_AMBIENTE/requirements.txt',
     '--requirements',
-    'c:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\40_DEPLOYMENT\\api\\fastapi_app\\requirements.txt',
+    '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/40_DEPLOYMENT/api/fastapi_app/requirements.txt',
     '--requirements',
-    'c:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\40_DEPLOYMENT\\apps\\streamlit_dashboard\\requirements.txt'
+    '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/40_DEPLOYMENT/apps/streamlit_dashboard/requirements.txt'
+  ]
+}
+2025-10-23 16:11:42.374 [error] Error: spawn /mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/.venv/bin/python ENOENT
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:285:19)
+    at onErrorNT (node:internal/child_process:483:16)
+    at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawn /mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/.venv/bin/python',
+  path: '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/.venv/bin/python',
+  spawnargs: [
+    '/home/leopoldo/.vscode-server/extensions/ms-python.python-2025.16.0-linux-x64/python_files/create_venv.py',
+    '--git-ignore',
+    '--requirements',
+    '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/01_INFRA_E_AMBIENTE/requirements.txt',
+    '--requirements',
+    '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/40_DEPLOYMENT/api/fastapi_app/requirements.txt',
+    '--requirements',
+    '/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/40_DEPLOYMENT/apps/streamlit_dashboard/requirements.txt'
   ]
 }

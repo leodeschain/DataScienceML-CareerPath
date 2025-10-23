@@ -1,3 +1,4 @@
 {
-    "python.venvPath": "C:/projects/projetodev/datascienceml/data-ml-portfolio"
+    "python.venvPath": "/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/01_INFRA_E_AMBIENTE",
+    "python.defaultInterpreterPath": "/mnt/c/projects/projetodev/datascienceml/data-ml-portfolio/01_INFRA_E_AMBIENTE/.venv/bin/python"
 }
