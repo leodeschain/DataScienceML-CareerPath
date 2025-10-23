@@ -1,0 +1,19 @@
+2025-10-22 15:10:26.631 [error] Error: spawn C:\projects\projetodev\datascienceml\data-ml-portfolio\.venv\Scripts\python.exe ENOENT
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:285:19)
+    at onErrorNT (node:internal/child_process:483:16)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'spawn C:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\.venv\\Scripts\\python.exe',
+  path: 'C:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\.venv\\Scripts\\python.exe',
+  spawnargs: [
+    'c:\\Users\\Leopoldo\\.vscode\\extensions\\ms-python.python-2025.16.0-win32-x64\\python_files\\create_venv.py',
+    '--git-ignore',
+    '--requirements',
+    'c:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\01_INFRA_E_AMBIENTE\\requirements.txt',
+    '--requirements',
+    'c:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\40_DEPLOYMENT\\api\\fastapi_app\\requirements.txt',
+    '--requirements',
+    'c:\\projects\\projetodev\\datascienceml\\data-ml-portfolio\\40_DEPLOYMENT\\apps\\streamlit_dashboard\\requirements.txt'
+  ]
+}
