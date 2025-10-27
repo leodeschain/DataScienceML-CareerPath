@@ -1,0 +1,5 @@
+testar reimplementar ambiente do zero sem .sh direto no jupyter notebook/vscode
+
+reinicializar projeto 
+
+treinar manualmente com dados analisados
